@@ -2,12 +2,11 @@
 export default async function handler(req, res) {
   const { code } = req.query;
   if (!code) {
-    return res.status(400).send("Missing code");
+    return res.status(400).send("缺少授權碼");
   }
 
-  // 這裡您可以處理 OAuth 交換 Token 的邏輯
-  console.log("Twitch 回傳的授權碼:", code);
+  // 在此處理 Twitch OAuth 流程，例如交換授權碼以獲取訪問權杖
+  console.log("收到的授權碼:", code);
 
-  res.send("已收到 Twitch OAuth 回傳的 code，您可以在控制台查看");
+  res.send("已成功接收授權碼，請檢查伺服器日誌以獲取詳細資訊。");
 }
-
